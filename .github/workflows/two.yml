@@ -1,0 +1,17 @@
+name: Two
+
+on:
+  workflow_run:
+    workflows: ["one"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  hey:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Say Hey
+      run: echo "Hey, World!"
+
